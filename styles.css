@@ -9,65 +9,69 @@ a{
     text-decoration: none;
     color: black;
 }
-a:is(:link, :active, :visited).active{
+.header.sticky {
+    color: black;
+}
+/* .header.sticky {
+
+} */
+.header {
+    position: fixed;
+    background-color: rgba(223, 227, 244, 0.968);
+    box-shadow: 0 .1rem 1rem var #706b6b;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 7%;
+    width: 100%;
+    z-index: 100;
+    transition: .5s;
+    /* display: block; */
+}
+/* a:is(:link, :active, :visited).active{
     color: white;
     padding: 0.6rem 1rem;
     background-color:rgb(13, 126, 126);
 
-}
+} */
 .fa-solid:hover {
     color:rgb(13, 126, 126);
-}
-
-.checkbtn{
-    font-size: 2rem;
-    color: black;
-    float: right;
-    line-height: 80px;
-    margin-right: 40px;
-    cursor: pointer;
-    display: none;
-}
-#check{
-    display: none;
-}
-header #maker {
-    position: absolute;
-    height: 4px;
-    left: 0;
-    width: 0;
-    background: rgb(13, 126, 126);
-    bottom: -8px;
-    transition: 0.5s;
-    border-radius: 4px;
-}
-.navbar{
-    display: flex;
-    background-color: rgba(223, 227, 244, 0.968);
-    align-items: center;
-    justify-content: space-between;
-    padding:  1rem  4rem 0 4rem;
-    position: fixed;
-    top: 0;
-    width: 100%;
-}
-.hamburger {
-    display: none;
-}
-.bars {
-    display: none;
-
 }
 li {
     list-style: none;
 }
-.nav-menu{
+/* header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 7%;
+} */
+/* .menu{
+    border-top: .1rem solid rgba(0, 0, 0, .2);
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+   
+} */
+.menu-Icon{
+    display: none;
+}
+.menu{
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 60%;
     font-size: 1.2rem;
     cursor: pointer;
+}
+.menu a.active::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 100%;
+    background-color: var(--bg-color);
+    height: .2rem;
 }
 /* header a:hover{
     background-color: rgb(13, 126, 126);
@@ -115,6 +119,8 @@ button  {
     font-size: 1rem;
     font-weight: 700;
 }
+   
+     
 /* =================FEATURES==================== */
 .features {
     display: flex;
@@ -608,6 +614,65 @@ form button {
 
 } */
 @media only screen and (max-width:950px){
+ 
+    .menu a.active::before{
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -8px;
+        width: 100%;
+        background-color: white;
+        height: .2rem;
+    }
+    .menu a.active {
+        color: black;
+    }
+    .menu-Icon{
+        display: block;
+        font-size: 1.5rem;
+    }
+    
+    .menu a::before{
+        display: none;
+    }
+    .menu{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        color:#333;
+        background: white;
+        padding: 1rem 7%;
+        border-top: .1rem solid rgba(0, 0, 0, .2);
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+        /* padding: 0 4rem; */
+        display: none;
+    }
+    .menu.active {
+        display: block;
+        color:#333;
+        background: white;
+        position: absolute;
+
+    }
+    .menu  a{
+        color: #333 ;
+        margin: .6rem 0;
+        display: block;
+
+    }
+    /* .menu a::before{
+        display: none;
+    } */
+   
+    .toggle .toggle-icon{
+        color: red;
+
+    }
+
     .products {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -648,7 +713,7 @@ form button {
     .logo img{
         width: 5rem;
     }
-
+   
     .navbar{
         display: flex;
         background-color: rgba(223, 227, 244, 0.968);
@@ -661,7 +726,7 @@ form button {
     }
     .cara{
         width: 100%;
-        padding: 2rem 0 0 0;   
+        padding: 3rem 0 0 0;   
         justify-content: flex-end ;
         
     }
@@ -898,7 +963,18 @@ form button {
     font-size: 6px;
 
 }
+.foot  img{
+    width: 5rem;
+}
+.foot h1 {
+    font-size: .8rem;
+    font-weight: 200;
+}
+/* footer h2 {
+    padding-bottom: 5rem;
+} */
 .foote {
+    
     display: flex;
     flex-direction: column;
     justify-content: space-between;
